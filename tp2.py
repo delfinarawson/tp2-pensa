@@ -1,3 +1,4 @@
+
 def read_file (archivo):
     archivo = open(archivo, "r")
     lineas = archivo.readlines()
@@ -17,8 +18,14 @@ def read_file (archivo):
 
 print(read_file("bolsa.csv"))
 
-
 def monthly_average (accion, dict):
+    lista_meses = [] 
+    lista_fechas=[]
+
+    cada_mes = []
+    precios = []
+    promedio_meses = []
+    
     for fecha in dict['Date']:
         fecha_split = fecha.split('-')
         mes = fecha_split[1] 
@@ -33,3 +40,5 @@ def monthly_average (accion, dict):
 
 
     return(fecha, precios_promedio )
+
+        
