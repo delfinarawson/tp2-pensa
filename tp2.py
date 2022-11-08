@@ -32,4 +32,4 @@ def monthly_average (accion, dict):
 
 
 
-    return(fecha,precios_promedio )
+    return(fecha, precios_promedio )

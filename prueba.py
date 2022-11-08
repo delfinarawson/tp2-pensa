@@ -23,5 +23,8 @@ for fecha in dict['Date']:
         lista_meses.append(ano_mes)
         lista_fechas.append(fecha)
 
+
 print(lista_fechas)
+
+
 
