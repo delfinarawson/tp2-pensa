@@ -55,3 +55,18 @@ def monthly_average(accion, diccionario):
             dict_monedas[accion][m].append(linea_split[i+1])   """
     
 monthly_average('SATL', read_file('bolsa.csv'))
+
+    # mes = fecha_split[1] 
+    # lista_meses = []
+    # for mes in dict['Date']:
+    #     if mes not in lista_meses:
+    #         lista_meses.append(fecha_split)
+
+
+
+
+
+
+    # return(fecha, precios_promedio )
+
+        
