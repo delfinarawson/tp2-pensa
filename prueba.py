@@ -5,8 +5,8 @@ archivo = open('bolsa.csv', "r")
 lineas = archivo.readlines()
 archivo.close()
 dict = {}
-
 claves = lineas[0].strip().split(',') 
+
 for clave in claves:
     dict[clave] = []
 
@@ -30,19 +30,21 @@ for fecha in dict['Date']:
 
 # 2 esta parte no nos sale
 
-dict_satl = {}
-dict_meli = {}
-dict_mhvyf = {}
-dict_rtx = {}
+dict_monedas = {}
+nombres_monedas = claves[1:]
 
-lista_valores=[]
-
-for mes in lista_meses: # mes es '2021-10, 2021-11, 2021,12 ...'
-    dict[mes]= 0
+for moneda in nombres_monedas:
+    dict_monedas[moneda] = {}
+    for mes in lista_meses: # mes es '2021-10, 2021-11, 2021,12 ...'
+        dict_monedas[moneda][mes]= [] # aca creamos un diccionario dentro del diccionario grande. 
 
 for linea in lineas[1:]:
     linea_split = linea.strip().split(',') # ['2022-08-24', '5.050000190734863', '917.4400024414062', '35.63999938964844', '93.58000183105469']
-    m = linea_split[0][0:7] # 2022-08    
-    if mes == m:
-        dict_satl[mes] = lista_valores
+    m = linea_split[0][0:7] # 2022-08  
+    for i, moneda in enumerate(nombres_monedas):  
+        dict_monedas[moneda][m].append(linea_split[i+1])
 
+promedio_meses = []
+lista_valores=[]
+cada_mes = []
+precios = []
