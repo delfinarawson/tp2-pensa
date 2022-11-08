@@ -42,9 +42,15 @@ for linea in lineas[1:]:
     linea_split = linea.strip().split(',') # ['2022-08-24', '5.050000190734863', '917.4400024414062', '35.63999938964844', '93.58000183105469']
     m = linea_split[0][0:7] # 2022-08  
     for i, moneda in enumerate(nombres_monedas):  
-        dict_monedas[moneda][m].append(linea_split[i+1])
+        dict_monedas[moneda][m].append(float(linea_split[i+1]))
 
-promedio_meses = []
-lista_valores=[]
-cada_mes = []
-precios = []
+precios_prom = []
+
+for diccionario in dict_monedas[moneda][m]:
+    suma= 0
+    for valores in diccionario:
+        suma += float(valores)
+    promedio = suma / len(diccionario[moneda])
+    precios_prom.append(promedio)
+
+print(precios_prom)
