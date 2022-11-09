@@ -35,8 +35,16 @@ def monthly_average(accion, diccionario):
         if ano_mes not in dict:
             dict[ano_mes] = []
         dict[ano_mes].append(precio)
+
         
-    precios_prom = []
+precios_prom = []
+
+for diccionario in dict[moneda][m]:
+    suma= 0
+    for valores in diccionario:
+        suma += float(valores)
+    promedio = suma / len(diccionario[moneda])
+    precios_prom.append(promedio)
 
 # lo del promedio aca 
 
