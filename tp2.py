@@ -16,14 +16,13 @@ def read_file (archivo):
             dict[clave].append(valor)
     return dict
 
-print(read_file("bolsa.csv"))
-
 def monthly_average(accion, diccionario):
 
     dict = {}
     
     precios = diccionario[accion]
     fechas = diccionario['Date']
+    lista_meses = []
 
     i = 0
     while i < len(fechas):
@@ -33,6 +32,7 @@ def monthly_average(accion, diccionario):
         fecha_split = fecha.split('-')
         ano_mes = fecha_split[0]+"-"+fecha_split[1] 
         if ano_mes not in dict:
+            lista_meses.append(fecha)
             dict[ano_mes] = []
         dict[ano_mes].append(precio)
 
@@ -61,20 +61,17 @@ for diccionario in dict[moneda][m]:
         m = linea_split[0][0:7] # 2022-08  
         for i, moneda in enumerate(nombres_monedas):  
             dict_monedas[accion][m].append(linea_split[i+1])   """
+    precios_prom = []
     
+    for valores in dict.values(): # ['9.930000305175781', '9.920000076293945', '9.90999984741211', '9.914999961853027', '9.930000305175781', '9.90999984741211', '9.930000305175781', '9.9399995803833', '9.930000305175781', '9.930000305175781', '9.925999641418457', '9.930000305175781', '9.930000305175781', '9.920000076293945', '9.920000076293945', '9.930999755859375', '10.039999961853027']
+        largo = len(valores)
+        suma = 0
+        for valor in valores:
+            valor = float(valor)
+            suma += valor
+        promedio = suma/largo
+        precios_prom.append(promedio)
+
+     return lista_meses, precios_prom
+
 monthly_average('SATL', read_file('bolsa.csv'))
-
-    # mes = fecha_split[1] 
-    # lista_meses = []
-    # for mes in dict['Date']:
-    #     if mes not in lista_meses:
-    #         lista_meses.append(fecha_split)
-
-
-
-
-
-
-    # return(fecha, precios_promedio )
-
-        
