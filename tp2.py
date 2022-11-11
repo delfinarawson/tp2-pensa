@@ -71,7 +71,7 @@ for diccionario in dict[moneda][m]:
             suma += valor
         promedio = suma/largo
         precios_prom.append(promedio)
-
-     return lista_meses, precios_prom
+    
+    return lista_meses, precios_prom
 
 monthly_average('SATL', read_file('bolsa.csv'))
