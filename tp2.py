@@ -134,8 +134,12 @@ def plot_price(accion, dict):
 
 plot_price('MELI', dict)
 
+# 7 
 
+def monthly_average_bar_plot(accion, dict):
+    average, fechas = monthly_average(accion, dict)
+    plt.bar(average, fechas)
+    plt.savefig(f"monthly_average_bar_plot{accion}.png")
 
-    
-
+monthly_average_bar_plot("MELI", dict)
 
