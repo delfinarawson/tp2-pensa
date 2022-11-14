@@ -158,6 +158,8 @@ def plot_price(accion, dict):
     ejex = dict['Date']
     ejey= dict[accion]
     plt.plot(ejex, ejey)
+    plt.xlabel("Fechas")
+    plt.ylabel("Precios")
     return plt.savefig(f'price_{accion}.png')
 
 """ ganancia = (pv-pc) / pc
