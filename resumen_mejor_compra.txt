@@ -1,0 +1,4 @@
+SATL genera una ganancia de 5.706072773450977% habiendo comprado en  2022-06-01 y vendiendose en 2022-06-06
+MELI genera una ganancia de 12.293573331427707% habiendo comprado en  2022-05-25 y vendiendose en 2022-06-06
+MHVYF genera una ganancia de 80.87578668546175% habiendo comprado en  2021-12-22 y vendiendose en 2022-06-06
+RTX genera una ganancia de 19.84019630287131% habiendo comprado en  2021-12-20 y vendiendose en 2022-06-06
