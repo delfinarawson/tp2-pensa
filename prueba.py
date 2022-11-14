@@ -54,3 +54,4 @@ for diccionario in dict_monedas[moneda][m]:
     precios_prom.append(promedio)
 
 print(precios_prom)
+
