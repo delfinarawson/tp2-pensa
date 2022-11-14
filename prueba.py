@@ -19,6 +19,8 @@ for linea in lineas[1:]:
 lista_meses = [] 
 lista_fechas=[]
 
+print(dict)
+
 # 2 esta parte esta bien 
 
 for fecha in dict['Date']:
@@ -34,9 +36,10 @@ dict_monedas = {}
 nombres_monedas = claves[1:]
 
 for moneda in nombres_monedas:
-    dict_monedas[moneda] = {}
+    dict_monedas[moneda] = {} # iniciamos un diccionario donde cada moneda es la clave y tiene un dict vacio
     for mes in lista_meses: # mes es '2021-10, 2021-11, 2021,12 ...'
-        dict_monedas[moneda][mes]= [] # aca creamos un diccionario dentro del diccionario grande. 
+        dict_monedas[moneda][mes]= [] # aca creamos un diccionario dentro del diccionario grande,
+
 
 for linea in lineas[1:]:
     linea_split = linea.strip().split(',') # ['2022-08-24', '5.050000190734863', '917.4400024414062', '35.63999938964844', '93.58000183105469']
@@ -54,4 +57,14 @@ for diccionario in dict_monedas[moneda][m]:
     precios_prom.append(promedio)
 
 print(precios_prom)
+
+dict_monedas[moneda][m].append(linea_split[i+1])  
+
+
+print(dict_monedas)
+
+promedio_meses = []
+lista_valores=[]
+cada_mes = []
+precios = []
 
