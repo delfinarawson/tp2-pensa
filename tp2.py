@@ -40,6 +40,33 @@ def monthly_average(accion, diccionario):
             lista_meses.append(fecha)
             dict[ano_mes] = []
         dict[ano_mes].append(precio)
+    
+
+        
+precios_prom = []
+
+for diccionario in dict[moneda][m]:
+    suma= 0
+    for valores in diccionario:
+        suma += float(valores)
+    promedio = suma / len(diccionario[moneda])
+    precios_prom.append(promedio)
+
+# lo del promedio aca 
+
+    # for diccionario in dict_monedas[moneda][m]:
+    #     suma = 0 
+    #     for valores in diccionario:
+    #         suma += float(valores)
+    #     promedio = suma / len(diccionario[moneda])
+    #     precios_prom.append(promedio)
+
+
+    """ for linea in lineas[1:]:
+        linea_split = linea.strip().split(',') # ['2022-08-24', '5.050000190734863', '917.4400024414062', '35.63999938964844', '93.58000183105469']
+        m = linea_split[0][0:7] # 2022-08  
+        for i, moneda in enumerate(nombres_monedas):  
+            dict_monedas[accion][m].append(linea_split[i+1])   """
 
     precios_prom = []
     
@@ -51,6 +78,7 @@ def monthly_average(accion, diccionario):
             suma += valor
         promedio = suma/largo
         precios_prom.append(promedio)
+    
 
     return lista_meses, precios_prom
 
@@ -128,6 +156,9 @@ def plot_price(accion, dict):
     plt.ylabel("Precios")
     return plt.savefig(f'price_{accion}.png')
 
+""" ganancia = (pv-pc) / pc
+    for i, in enumerate()
+ """
 plot_price('MELI', dict)
 
 # 7 
