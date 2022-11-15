@@ -1,6 +1,4 @@
-
 # 1
-
 def read_file (archivo):
     archivo = open(archivo, "r")
     lineas = archivo.readlines()
@@ -23,7 +21,6 @@ def read_file (archivo):
 dict = read_file('bolsa.csv')
 
 # 2
-
 def monthly_average(accion, diccionario):
 
     dict = {}
@@ -46,7 +43,7 @@ def monthly_average(accion, diccionario):
 
     precios_prom = []
     
-    for valores in dict.values(): # ['9.930000305175781', '9.920000076293945', '9.90999984741211', '9.914999961853027', '9.930000305175781', '9.90999984741211', '9.930000305175781', '9.9399995803833', '9.930000305175781', '9.930000305175781', '9.925999641418457', '9.930000305175781', '9.930000305175781', '9.920000076293945', '9.920000076293945', '9.930999755859375', '10.039999961853027']
+    for valores in dict.values():                               # ['9.930000305175781', '9.920000076293945', '9.90999984741211', '9.914999961853027', '9.930000305175781', '9.90999984741211', '9.930000305175781', '9.9399995803833', '9.930000305175781', '9.930000305175781', '9.925999641418457', '9.930000305175781', '9.930000305175781', '9.920000076293945', '9.920000076293945', '9.930999755859375', '10.039999961853027']
         largo = len(valores)
         suma = 0
         for valor in valores:
@@ -73,7 +70,6 @@ while i < len(lista_meses):
 archivo.close()
 
 # 4 
-
 def max_gain (accion, dict, fecha_venta):
     
     ind_precio_venta = dict["Date"].index(fecha_venta)
@@ -101,7 +97,6 @@ def max_gain (accion, dict, fecha_venta):
 max_gain('RTX', dict, "2021-12-17")
 
 # 5 
-
 def report_max_gains(dict, fecha_venta):
     
     archivo = open('resumen_mejor_compra.txt', 'w')
@@ -122,7 +117,6 @@ def report_max_gains(dict, fecha_venta):
 report_max_gains(dict,"2022-06-06" )
 
 # 6 
-
 import matplotlib.pyplot as plt
 
 def plot_price(accion, dict):
@@ -137,7 +131,6 @@ def plot_price(accion, dict):
 plot_price('MELI', dict)
 
 # 7 
-
 def monthly_average_bar_plot(accion, dict):
     average, fechas = monthly_average(accion, dict)
     plt.bar(average, fechas)
